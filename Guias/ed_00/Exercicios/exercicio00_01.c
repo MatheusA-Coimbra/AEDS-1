@@ -12,22 +12,20 @@
 #include <stdio.h>  // para entradas e saidas
 #include <stdlib.h> // para outras funcoes de uso geral
 
-int main() {
-    // definir dados
-    int opcao = 0;
-    int metodos = 50;
-
-    // identificar
-    printf("%s\n", "Exercicio 01 - Programa = v0.1");
-    printf("%s\n", "Autor:Matheus Arantes Coimbra");
+/*
+    Metodos de funcoes:
+    lbm() = line break method (metodo de quebra de linha) : substitui o printf("\n");
+    opcoes() : mostra as opcoes a serem escolidas
+*/
+void lbm(void) {
+    // mudanca de linha
     printf("\n");
-    // lbm();  // mudanca de linha
-
-    // acoes
-    // estrutura de repeticao
-    do {
-        // mostrar acoes
-        printf("\n%s\n", "Opcoes:");
+    return;
+}
+void mostra_opcao(int metodos) {
+    // para mostra opcoes
+    printf("\n%s\n", "Opcoes:");
+    // estrutura de repeticao com condicionamento
         for(int i = 0; i < metodos+1; i++) {
             if (i == 0) {
                 printf("%s\n", "0-Terminar");
@@ -41,6 +39,30 @@ int main() {
                 }    
             }
         }
+}
+
+// metodo 01
+void method_01() {
+    printf("EXEMPLO101 - PRIMEIRO EXEMPLO EM C");
+    printf("\nPRESSIONAR <ENTER> PARA TERMINAR");
+    getchar();  // para esperar
+}   // end method_01()
+
+int main() {
+    // definir dados
+    int opcao = 0;
+    int metodos = 50;
+
+    // identificar
+    printf("%s\n", "Exercicio 01 - Programa = v0.1");
+    printf("%s\n", "Autor:Matheus Arantes Coimbra");
+    lbm();  // mudanca de linha
+
+    // acoes
+    // estrutura de repeticao
+    do {
+        // mostrar acoes
+        mostra_opcao(metodos);
 
         // ler opcao do teclado
         printf("\n%s", "Opcao = ");
@@ -50,6 +72,9 @@ int main() {
         // escolher acao dependendo da opcao
         switch(opcao) {
             case 0:     // finalizar programa
+                break;
+            case 1:     // metodo 01 - EXEMPLO101
+                method_01();
                 break;
             default:    // comportamento padrao
                 printf("\nERRO: Opcao invalida\n");
@@ -77,4 +102,5 @@ int main() {
     Versao      Teste
     0.0         00.(OK)         identificacao de programa
     0.1         03.(OK)         leitura e exibicao mediante a escola
+    0.2         05.(OK)         estruturacao da main + metodo 01
 */
